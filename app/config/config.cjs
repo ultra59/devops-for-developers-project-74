@@ -11,6 +11,16 @@ module.exports = {
 		},
 	},
 
+	test: {
+		client: "pg",
+		connection: {
+			host: process.env.DATABASE_HOST,
+			database: process.env.DATABASE_NAME,
+			user: process.env.DATABASE_USERNAME,
+			password: process.env.DATABASE_PASSWORD,
+		},
+	},
+
 	production: {
 		client: "pg",
 		connection: {
@@ -19,16 +29,6 @@ module.exports = {
 			user: process.env.DATABASE_USERNAME,
 			password: process.env.DATABASE_PASSWORD,
 			port: process.env.DATABASE_PORT,
-		},
-	},
-
-	test: {
-		client: "pg",
-		connection: {
-			host: process.env.DATABASE_HOST,
-			database: process.env.DATABASE_NAME,
-			user: process.env.DATABASE_USERNAME,
-			password: process.env.DATABASE_PASSWORD,
 		},
 	},
 };
