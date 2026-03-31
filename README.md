@@ -2,6 +2,21 @@
 
 [![Actions Status](https://github.com/ultra59/devops-for-developers-project-74/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/ultra59/devops-for-developers-project-74/actions)
 
-### Project CI status:
+### CI/CD Pipeline status:
 
-![CI](https://github.com/ultra59/devops-for-developers-project-74/actions/workflows/push.yml/badge.svg)
+[![CI/CD Pipeline](https://github.com/ultra59/devops-for-developers-project-74/actions/workflows/push.yml/badge.svg)](https://github.com/ultra59/devops-for-developers-project-74/actions/workflows/push.yml)
+
+# DevOps for Developers Project
+
+## Требования к системе
+
+- Docker
+- Docker Compose
+
+## Запуск проекта
+
+### Разработка
+
+```bash
+docker compose up
+```

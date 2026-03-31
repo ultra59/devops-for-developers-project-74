@@ -2,33 +2,23 @@ require("dotenv").config();
 
 module.exports = {
 	development: {
-		client: "pg",
-		connection: {
-			host: process.env.DATABASE_HOST,
-			database: process.env.DATABASE_NAME,
-			user: process.env.DATABASE_USERNAME,
-			password: process.env.DATABASE_PASSWORD,
-		},
+		dialect: "sqlite",
+		storage: "./database.sqlite",
 	},
-
-	test: {
-		client: "pg",
-		connection: {
-			host: process.env.DATABASE_HOST,
-			database: process.env.DATABASE_NAME,
-			user: process.env.DATABASE_USERNAME,
-			password: process.env.DATABASE_PASSWORD,
-		},
-	},
-
 	production: {
-		client: "pg",
-		connection: {
-			host: process.env.DATABASE_HOST,
-			database: process.env.DATABASE_NAME,
-			user: process.env.DATABASE_USERNAME,
-			password: process.env.DATABASE_PASSWORD,
-			port: process.env.DATABASE_PORT,
-		},
+		dialect: "postgres",
+		database: process.env.DATABASE_NAME,
+		username: process.env.DATABASE_USERNAME,
+		password: process.env.DATABASE_PASSWORD,
+		port: process.env.DATABASE_PORT,
+		host: process.env.DATABASE_HOST,
+	},
+	test: {
+		dialect: "postgres",
+		database: process.env.DATABASE_NAME || "postgres",
+		username: process.env.DATABASE_USERNAME || "postgres",
+		password: process.env.DATABASE_PASSWORD || "password",
+		host: process.env.DATABASE_HOST || "db",
+		port: process.env.DATABASE_PORT || 5432,
 	},
 };
