@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+    app:
+        command: make dev
+        ports:
+            - "8080:8080"
+        services:
+        volumes:
+            - ./app:/app
