@@ -1,10 +1,17 @@
-version: "3.9"
-
 services:
     app:
         command: make dev
         ports:
             - "8080:8080"
-        services:
         volumes:
             - ./app:/app
+
+    caddy:
+        image: caddy:2
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - ./services/caddy/Caddyfile:/etc/caddy/Caddyfile
+        depends_on:
+            - app
